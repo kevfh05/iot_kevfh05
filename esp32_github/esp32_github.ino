@@ -27,7 +27,7 @@ void setup() {
   pinMode(ledIndicador, OUTPUT);
   pinMode(led, OUTPUT);
   pinMode(boton, PULLDOWN);
-  wifiMulti.addAP("CoWorking", "CoWorking$");
+  wifiMulti.addAP("¡PhoneKevin", "55555555");
   wifiMulti.addAP("SSID_FROM_AP_1", "YOUR_PASSWORD_FOR_AP_1");
   wifiMulti.addAP("SSID_FROM_AP_1", "YOUR_PASSWORD_FOR_AP_1");
   client.begin("broker.shiftr.io", net);

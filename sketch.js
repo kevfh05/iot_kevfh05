@@ -1,6 +1,12 @@
 
+let btnActivar;
+let btnApagar;
+
 function setup() {
   createCanvas(600, 600);
+  btnActivar = createButton("Activar Led");
+  btnApagar = createButton("Apagar Led");
+
 }
 
 function draw() {

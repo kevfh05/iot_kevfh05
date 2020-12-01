@@ -9,7 +9,7 @@ let ClienteIDMQTT = "Pagina-"+Math.floor(Math.random() * 1000);
 let UsuarioMQTT = "dataKevfh05";
 let ContrasenaMQTT = "12345678";
 
-client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT, ClienteIDMQTT);
+client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT,'/mqtt-wss', ClienteIDMQTT);
 
 client.onConnectionLost = MQTTPerder;
 client.onMessageArrived = MQTTMensaje;

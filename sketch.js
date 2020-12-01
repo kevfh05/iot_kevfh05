@@ -4,12 +4,12 @@ let btnApagar;
 let estadoFondo = false;
 
 let BrokerMQTT = 'broker.shiftr.io';
-let PuertoMQTT = 443;
+let PuertoMQTT = 80;
 let ClienteIDMQTT = "Pagina-"+Math.floor(Math.random() * 1000);
 let UsuarioMQTT = "dataKevfh05";
 let ContrasenaMQTT = "12345678";
 
-client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT, ClienteIDMQTT);
+client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT, ClienteIDMQTT, *random);
 
 client.onConnectionLost = MQTTPerder;
 client.onMessageArrived = MQTTMensaje;

@@ -61,11 +61,11 @@ void MandarData() {
 void ActualizarLed() {
   if (estadoLed) {
     digitalWrite(led, 1);
-    Serial.println("Encendido");
+   // Serial.println("Encendido");
   }
   else {
     digitalWrite(led, 0);
-    Serial.println("Apagado");
+    //Serial.println("Apagado");
   }
 }
 

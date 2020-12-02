@@ -25,14 +25,18 @@ function MQTTPerder(responseObject) {
   }
 }
 
-function MQTTMensaje(message) {
-  console.log("Mensaje recibido:" + message.payloadString);
-  if (message.payloadString == '1') {
-    estadoFondo = true;
-  }else {
-    estadoFondo = false;
-  }
-}
+// function MQTTMensaje(message) {
+//   console.log("Mensaje recibido:" + message.payloadString);
+//   if (message.payloadString == '1') {
+//     estadoFondo = true;
+//   }else {
+//     estadoFondo = false;
+//   }
+// }
+
+client.on('message', function (topic, message) {
+  console.log(message.toString())
+})
 
 // function CuandoConectadoMQTT() {
 //   console.log("MQTT Conectado");

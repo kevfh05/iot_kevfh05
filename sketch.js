@@ -10,7 +10,7 @@ let estadoFondo = false;
 // let ContrasenaMQTT = "12345678";
 //
 // client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT,'/mqtt-wss', ClienteIDMQTT);
-var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
+var client = mqtt.connect('wss://dataKevfh05:12345678@broker.shiftr.io', {
   clientId: ClienteIDMQTT,
   protocolVersion: 3,
   keepalive: 60,

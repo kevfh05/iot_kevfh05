@@ -3,13 +3,17 @@ let btnActivar;
 let btnApagar;
 let estadoFondo = false;
 
-let BrokerMQTT = 'broker.shiftr.io';
-let PuertoMQTT = 443;
-let ClienteIDMQTT = "Pagina-"+Math.floor(Math.random() * 1000);
-let UsuarioMQTT = "dataKevfh05";
-let ContrasenaMQTT = "12345678";
+// let BrokerMQTT = 'broker.shiftr.io';
+// let PuertoMQTT = 443;
+// let ClienteIDMQTT = "Pagina-"+Math.floor(Math.random() * 1000);
+// let UsuarioMQTT = "dataKevfh05";
+// let ContrasenaMQTT = "12345678";
+//
+// client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT,'/mqtt-wss', ClienteIDMQTT);
 
-client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT,'/mqtt-wss', ClienteIDMQTT);
+var client = mqtt.connect('mqtt://kevfh05~kevfh05@broker.shiftr.io', {
+  clientId: 'ControladorWeb'
+});
 
 client.onConnectionLost = MQTTPerder;
 client.onMessageArrived = MQTTMensaje;

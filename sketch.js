@@ -51,7 +51,7 @@ client.on('message', function (topic, message) {
   }else {
     estadoFondo = false;
   }
-  client.end()
+  
 })
 
 function setup() {

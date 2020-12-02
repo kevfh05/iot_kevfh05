@@ -51,6 +51,11 @@ client.on('connect', function () {
   client.subscribe("/data/Boton");
 })
 
+setInterval(function(){
+   client.publish('/hello', 'world');
+ }, 1000);
+});
+
 function setup() {
   createCanvas(200, 200);
   createP();

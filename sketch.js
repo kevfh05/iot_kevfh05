@@ -36,6 +36,11 @@ function MQTTPerder(responseObject) {
 
 client.on('message', function (topic, message) {
   console.log(message.toString())
+  if (message.toString() == '1') {
+    estadoFondo = true;
+  }else {
+    estadoFondo = false;
+  }
 })
 
 // function CuandoConectadoMQTT() {

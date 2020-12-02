@@ -76,6 +76,10 @@ console.log("Apagando Led");
 client.publish('data/Led', '0');
 }
 
+function packetsend(packet) {
+  console.log(packet);
+}
+
 function draw() {
 if (estadoFondo) {
   background(0);

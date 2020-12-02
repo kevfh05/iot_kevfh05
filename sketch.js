@@ -18,11 +18,6 @@ var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
 client.onConnectionLost = MQTTPerder;
 client.onMessageArrived = MQTTMensaje;
 
-client.connect({
-  onSuccess: CuandoConectadoMQTT,
-  userName: UsuarioMQTT,
-  password: ContrasenaMQTT
-});
 
 function MQTTPerder(responseObject) {
   if (responseObject.errorCode !== 0) {

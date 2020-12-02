@@ -19,8 +19,7 @@ protocolId: 'MQTT',
 protocolVersion: 4,
 reconnectPeriod: 1000,
 connectTimeout: 30 * 1000,
-clean: true,
-wsOptions: wsOptions
+clean: true
 });
 
 // client.onConnectionLost = MQTTPerder;

@@ -99,13 +99,13 @@ void Conectando() {
 
 void RecibirMensaje(String &topic, String &payload) {
   Serial.println("incoming: " + topic + " - " + payload);
-
+  Serial.println(payload);
   if (payload == "1") {
-    Serial.println("encendido");
+    
     estadoLed = true;
   }
   else {
-    Serial.println("apagado");
+    
     estadoLed = false;
   }
 

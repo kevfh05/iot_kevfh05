@@ -10,7 +10,6 @@ let estadoFondo = false;
 // let ContrasenaMQTT = "12345678";
 //
 // client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT,'/mqtt-wss', ClienteIDMQTT);
-
 var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
   clientId: ClienteIDMQTT
 });
@@ -63,7 +62,7 @@ console.log("Encendiendo Led");
 // message = new Paho.MQTT.Message("1");
 // message.destinationName = "/data/Led";
 // client.send(message);
-client.publish("/data/Led", "1");
+client.publish("/data/Led", "1", { qos: 0, retain: false });
 }
 
 function ApagarLed(){
@@ -71,7 +70,7 @@ console.log("Apagando Led");
 // message = new Paho.MQTT.Message("0");
 // message.destinationName = "/data/Led";
 // client.send(message);
-client.publish("/data/Led", "0");
+client.publish("/data/Led", "0", { qos: 0, retain: false });
 }
 
 function draw() {

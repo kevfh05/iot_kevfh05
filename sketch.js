@@ -20,6 +20,7 @@ var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
 
 
 
+
 // function MQTTMensaje(message) {
 //   console.log("Mensaje recibido:" + message.payloadString);
 //   if (message.payloadString == '1') {
@@ -29,6 +30,14 @@ var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
 //   }
 // }
 
+client.on('message', function (topic, message) {
+  console.log(message.toString())
+  if (message.toString() == '1') {
+    estadoFondo = true;
+  }else {
+    estadoFondo = false;
+  }
+})
 
 // function CuandoConectadoMQTT() {
 //   console.log("MQTT Conectado");
@@ -37,21 +46,7 @@ var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
 
 client.on('connect', function () {
   console.log('connected');
-  client.subscribe("/data/Boton", function (err){
-    if (!err) {
-      client.publish('/data/Led', '1');
-    }
-  })
-})
-
-client.on('message', function (topic, message) {
-  console.log(message.toString())
-  if (message.toString() == '1') {
-    estadoFondo = true;
-  }else {
-    estadoFondo = false;
-  }
-  
+  client.subscribe("/data/Boton");
 })
 
 function setup() {
@@ -68,7 +63,7 @@ console.log("Encendiendo Led");
 // message = new Paho.MQTT.Message("1");
 // message.destinationName = "/data/Led";
 // client.send(message);
-client.publish('/data/Led', "1");
+client.publish("/data/Led", "1");
 }
 
 function ApagarLed(){
@@ -76,7 +71,7 @@ console.log("Apagando Led");
 // message = new Paho.MQTT.Message("0");
 // message.destinationName = "/data/Led";
 // client.send(message);
-client.publish('/data/Led', "0");
+client.publish("/data/Led", "0");
 }
 
 function draw() {

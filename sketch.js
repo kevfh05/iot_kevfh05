@@ -19,11 +19,6 @@ var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
 // client.onMessageArrived = MQTTMensaje;
 
 
-function MQTTPerder(responseObject) {
-  if (responseObject.errorCode !== 0) {
-    console.log("MQTT Perdio coneccion Error:" + responseObject.errorMessage);
-  }
-}
 
 // function MQTTMensaje(message) {
 //   console.log("Mensaje recibido:" + message.payloadString);
@@ -34,14 +29,6 @@ function MQTTPerder(responseObject) {
 //   }
 // }
 
-client.on('message', function (topic, message) {
-  console.log(message.toString())
-  if (message.toString() == '1') {
-    estadoFondo = true;
-  }else {
-    estadoFondo = false;
-  }
-})
 
 // function CuandoConectadoMQTT() {
 //   console.log("MQTT Conectado");
@@ -50,7 +37,21 @@ client.on('message', function (topic, message) {
 
 client.on('connect', function () {
   console.log('connected');
-  client.subscribe("/data/Boton");
+  client.subscribe("/data/Boton", function (err){
+    if (!err) {
+      client.publish('/data/Led', '1');
+    }
+  })
+})
+
+client.on('message', function (topic, message) {
+  console.log(message.toString())
+  if (message.toString() == '1') {
+    estadoFondo = true;
+  }else {
+    estadoFondo = false;
+  }
+  client.end()
 })
 
 function setup() {

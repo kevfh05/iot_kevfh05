@@ -46,26 +46,21 @@ client.on('message', function (topic, message) {
 //    client.subscribe("/data/Boton");
 // }
 
-// client.on('connect', function () {
-//   console.log('connected');
-//   client.subscribe("/data/Boton");
-// })
-//
-// setInterval(function(){
-//    client.publish('/hello', 'world');
-//  }, 1000);
-// });
-
-client.on('connect', function(){
-  console.log('client has connected!');
-
+client.on('connect', function () {
+  console.log('connected');
   client.subscribe("/data/Boton");
-  // client.unsubscribe('/example');
+})
 
-  setInterval(function(){
-    client.publish('/hello', 'world');
-  }, 1000);
-});
+// client.on('connect', function(){
+//   console.log('client has connected!');
+//
+//   client.subscribe("/data/Boton");
+//   // client.unsubscribe('/example');
+//
+//   setInterval(function(){
+//     client.publish('/hello', 'world');
+//   }, 1000);
+// });
 
 function setup() {
   createCanvas(200, 200);

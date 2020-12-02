@@ -15,8 +15,8 @@ var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
   clientId: ClienteIDMQTT
 });
 
-client.onConnectionLost = MQTTPerder;
-client.onMessageArrived = MQTTMensaje;
+// client.onConnectionLost = MQTTPerder;
+// client.onMessageArrived = MQTTMensaje;
 
 
 function MQTTPerder(responseObject) {
@@ -34,10 +34,15 @@ function MQTTMensaje(message) {
   }
 }
 
-function CuandoConectadoMQTT() {
-  console.log("MQTT Conectado");
-   client.subscribe("/data/Boton");
-}
+// function CuandoConectadoMQTT() {
+//   console.log("MQTT Conectado");
+//    client.subscribe("/data/Boton");
+// }
+
+client.on('connect', function () {
+  console.log('connected');
+  client.subscribe("/data/Boton");
+})
 
 function setup() {
   createCanvas(200, 200);

@@ -65,7 +65,7 @@ console.log("Encendiendo Led");
 // message = new Paho.MQTT.Message("1");
 // message.destinationName = "/data/Led";
 // client.send(message);
-client.publish('luz', 'hola');
+client.publish('/data/Led', '1');
 }
 
 function ApagarLed(){
@@ -73,7 +73,7 @@ console.log("Apagando Led");
 // message = new Paho.MQTT.Message("0");
 // message.destinationName = "/data/Led";
 // client.send(message);
-client.publish('luz', 'adios');
+client.publish('data/Led', '0');
 }
 
 function packetsend(packet) {

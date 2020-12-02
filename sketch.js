@@ -12,7 +12,7 @@ let estadoFondo = false;
 // client = new Paho.MQTT.Client(BrokerMQTT, PuertoMQTT,'/mqtt-wss', ClienteIDMQTT);
 
 var client = mqtt.connect('wss://kevfh05~kevfh05@broker.shiftr.io', {
-  clientId: ClienteIDMQTT;
+  clientId: ClienteIDMQTT
 });
 
 client.onConnectionLost = MQTTPerder;
